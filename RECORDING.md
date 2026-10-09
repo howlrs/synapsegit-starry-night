@@ -16,6 +16,7 @@
 | 登録用のコピー（向きを直し、位置情報入りの EXIF を除いたもの） | `photos/registered/` |
 | 生成メモ（登録1件ごと） | `.synapsegit/notes/<slug>.json` |
 | 進捗と添削 | `progress.md`、比較画像は `review/` |
+| GitHub（private の事例リポジトリ。載せる分だけ） | https://github.com/howlrs/synapsegit-starry-night |
 | SynapseGit の repository | `.synapsegit/repo` |
 | SynapseGit の Inbox（取り込み待ちの候補） | `.synapsegit/inbox` |
 
@@ -90,4 +91,8 @@
 
 次にやること（2026-10-10、絵の具が乾いてから再開）: `synapse-local` を起動し、制作者がブラウザで5件を取り込んで
 採用・不採用・保留を選ぶ → `progress.md` の直したい点を反映して工程4を塗る → 写真を共有 → `step5-black` を登録（Current＝工程4の後の写真）。
+GitHub への反映: 工程ごとに写真（`photos/registered/`・`docs/images/`）、`progress.md`、README の表を更新してコミットする。
+判断が済んだら `synapse-local` を止め、`creator-report` で確かめてから `synapse-present export --public --github` で書き出し、
+中身を確かめて `synapsegit/` に置く。`.synapsegit/` は `.git/info/exclude`、元写真は `.gitignore` で除外している。
+
 `synapse-local` の起動: `D=$PWD/.synapsegit; synapse-local --project "hoshizora=$D/repo" --label "hoshizora=星月夜の上塗り" --import-root "hoshizora=$D/inbox"`
