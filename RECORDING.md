@@ -60,7 +60,7 @@
 
 ## 決まったこと
 
-- 制作者名: `howlrs`（2026-10-09）
+- 制作者名: `howlrs`（2026-10-09。公開する howlrs のリポジトリに合わせた。Inbox の5件は別名で登録済み）
 - Original（塗る前のレプリカ）: `photos/20261009_step1_before.jpg`
 - スマホ（Pixel）の写真には位置情報が入っているので、SynapseGit には `photos/registered/` の
   コピーを登録する。`photos/` の写真は受け取ったファイルと同じ内容のまま残す。
@@ -80,17 +80,20 @@
 | 日付 | 件 | 使った写真 | slug | 判断 |
 |---|---|---|---|---|
 | 2026-10-09 | repository と Inbox を作成（候補の登録はまだ） | — | — | — |
-| 2026-10-09 | 計画 | O・C: step1_before | `plan-blue-5values` | 未（ブラウザで選ぶ） |
-| 2026-10-09 | 工程1 白 | O・C: step1_before | `step1-white` | 未 |
-| 2026-10-09 | 工程2 明るい青 | C: step1_after | `step2-lightblue` | 未 |
-| 2026-10-09 | 工程3 中間の青 | C: step1_after（※） | `step3-midblue` | 未 |
-| 2026-10-09 | 工程4 青 | C: step2-3_after | `step4-blue` | 未 |
+| 2026-10-09 | 計画 | O・C: step1_before | `plan-blue-5values` | 採用 |
+| 2026-10-09 | 工程1 白 | O・C: step1_before | `step1-white` | 採用 |
+| 2026-10-09 | 工程2 明るい青 | C: step1_after | `step2-lightblue` | 採用 |
+| 2026-10-09 | 工程3 中間の青 | C: step1_after（※） | `step3-midblue` | 採用 |
+| 2026-10-09 | 工程4 青 | C: step2-3_after | `step4-blue` | 採用（塗る前の判断） |
+
+判断は 2026-10-09、制作者が会話で伝えたものを `creator-run` で記録した（session 名 `inbox-<slug>`）。
+理由は計画〜工程3に制作者の言葉をそのまま入れた。工程4は理由なしで記録し、SynapseGit が既定の英文を入れた。
+公開用の書き出しは `synapsegit/bundle/`、説明文は `synapsegit/presentation.toml`（公開用の判断メモは制作者の確認待ちで未掲載）。
 
 ※ 工程2と3は続けて塗り、その間の写真がない。工程3の Current は工程2の開始前と同じ写真で、
 生成メモにもそう書いた。空の一部の黒（工程5の一部）は工程4より先に塗った。
 
-次にやること（2026-10-10、絵の具が乾いてから再開）: `synapse-local` を起動し、制作者がブラウザで5件を取り込んで
-採用・不採用・保留を選ぶ → `progress.md` の直したい点を反映して工程4を塗る → 写真を共有 → `step5-black` を登録（Current＝工程4の後の写真）。
+次にやること（2026-10-10、絵の具が乾いてから再開）: `progress.md` の直したい点を反映して工程4を塗る → 写真を共有 → `step5-black` を登録（Current＝工程4の後の写真）。
 GitHub への反映: 工程ごとに写真（`photos/registered/`・`docs/images/`）、`progress.md`、README の表を更新してコミットする。
 判断が済んだら `synapse-local` を止め、`creator-report` で確かめてから `synapse-present export --public --github` で書き出し、
 中身を確かめて `synapsegit/` に置く。`.synapsegit/` は `.git/info/exclude`、元写真は `.gitignore` で除外している。

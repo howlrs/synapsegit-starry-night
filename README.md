@@ -29,16 +29,17 @@ SynapseGit が確かめられるのは「記録した画像のバイトが同じ
 
 | 件 | Current | AI の提案 | 判断 |
 |---|---|---|---|
-| 計画 `plan-blue-5values` | <img src="docs/images/20261009_step1_before.jpg" width="200"> | <img src="output/03_value5_blue.png" width="200"> | 判断待ち |
-| 工程1 白 `step1-white` | <img src="docs/images/20261009_step1_before.jpg" width="200"> | <img src="output/steps_blue/step1_white.png" width="200"> | 判断待ち |
-| 工程2 明るい青 `step2-lightblue` | <img src="docs/images/20261009_step1_after.jpg" width="200"> | <img src="output/steps_blue/step2_lightblue.png" width="200"> | 判断待ち |
-| 工程3 中間の青 `step3-midblue` | <img src="docs/images/20261009_step1_after.jpg" width="200"> ※ | <img src="output/steps_blue/step3_midblue.png" width="200"> | 判断待ち |
-| 工程4 青 `step4-blue` | <img src="docs/images/20261009_step2-3_after.jpg" width="200"> | <img src="output/steps_blue/step4_blue.png" width="200"> | 判断待ち |
+| 計画 `plan-blue-5values` | <img src="docs/images/20261009_step1_before.jpg" width="200"> | <img src="output/03_value5_blue.png" width="200"> | **採用** |
+| 工程1 白 `step1-white` | <img src="docs/images/20261009_step1_before.jpg" width="200"> | <img src="output/steps_blue/step1_white.png" width="200"> | **採用** |
+| 工程2 明るい青 `step2-lightblue` | <img src="docs/images/20261009_step1_after.jpg" width="200"> | <img src="output/steps_blue/step2_lightblue.png" width="200"> | **採用** |
+| 工程3 中間の青 `step3-midblue` | <img src="docs/images/20261009_step1_after.jpg" width="200"> ※ | <img src="output/steps_blue/step3_midblue.png" width="200"> | **採用** |
+| 工程4 青 `step4-blue` | <img src="docs/images/20261009_step2-3_after.jpg" width="200"> | <img src="output/steps_blue/step4_blue.png" width="200"> | **採用**（塗る前の判断） |
 | 工程5 黒 `step5-black` | 工程4の後に登録 | <img src="output/steps_blue/step5_black.png" width="200"> | — |
 
 ※ 工程2と3は続けて塗り、その間の写真がありません。工程3の Current は工程2の開始前と同じ写真で、記録のメモにもそう書いています。
 
-判断が済んだら、`synapse-present export --public --github` の書き出しを `synapsegit/` に置きます。
+判断は 2026-10-09 に制作者が記録しました。SynapseGit の公開用の書き出し（`synapse-present export --public --github`）は
+[`synapsegit/bundle/target/README.md`](synapsegit/bundle/target/README.md) にあります。画像は含まれず、判断と画像の SHA-256 を照合できる形です。
 
 ## このリポジトリの中身
 
@@ -51,6 +52,7 @@ SynapseGit が確かめられるのは「記録した画像のバイトが同じ
 | [`RECORDING.md`](RECORDING.md) | 記録の方針、写真の一覧、登録の履歴 |
 | [`progress.md`](progress.md)・[`review/`](review/) | 日ごとの進捗と添削、明度の比較 |
 | [`docs/synapsegit-workflow.md`](docs/synapsegit-workflow.md) | 実際に使った SynapseGit のコマンドと、登録した画像の SHA-256 |
+| [`synapsegit/`](synapsegit/) | SynapseGit の公開用の書き出し（`bundle/`）と、公開用の説明文（`presentation.toml`） |
 
 ## GitHub に載せていないもの
 

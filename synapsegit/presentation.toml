@@ -1,0 +1,36 @@
+title = "星月夜の上塗り（白・青・黒の明度5段階）"
+summary = """IKEA の星月夜レプリカに白・青・黒のアクリルを重ね、明度5段階の絵に描き替える制作の記録。
+AI（Claude Code）が明度の見本と工程ごとの地図を提案し、制作者が工程ごとに採用・不採用・保留を判断した。
+画像そのものはこのリポジトリの photos/registered/ と output/ にあり、下の SHA-256 で照合できる。"""
+creator_display_name = "howlrs"
+proposal_agent_display_name = "Claude Code（make_values.py／make_steps.py で作成した見本と地図）"
+
+[sessions.inbox-plan-blue-5values]
+title = "計画: 明度5段階の完成見本"
+original_caption = "塗る前のレプリカ（photos/registered/20261009_step1_before.jpg）"
+current_caption = "塗る前のレプリカ（Original と同じ写真）"
+proposal_caption = "明度5段階の見本（output/03_value5_blue.png）"
+
+[sessions.inbox-step1-white]
+title = "工程1: 白"
+original_caption = "塗る前のレプリカ（photos/registered/20261009_step1_before.jpg）"
+current_caption = "工程1の前（塗る前と同じ写真）"
+proposal_caption = "工程1の地図（output/steps_blue/step1_white.png）。赤い輪郭が白で塗る場所"
+
+[sessions.inbox-step2-lightblue]
+title = "工程2: 明るい青"
+original_caption = "塗る前のレプリカ（photos/registered/20261009_step1_before.jpg）"
+current_caption = "工程1（白）の後（photos/registered/20261009_step1_after.jpg）"
+proposal_caption = "工程2の地図（output/steps_blue/step2_lightblue.png）"
+
+[sessions.inbox-step3-midblue]
+title = "工程3: 中間の青"
+original_caption = "塗る前のレプリカ（photos/registered/20261009_step1_before.jpg）"
+current_caption = "工程1の後の写真で代用（工程2と3を続けて塗り、その間の写真がないため）"
+proposal_caption = "工程3の地図（output/steps_blue/step3_midblue.png）"
+
+[sessions.inbox-step4-blue]
+title = "工程4: 青"
+original_caption = "塗る前のレプリカ（photos/registered/20261009_step1_before.jpg）"
+current_caption = "工程2・3と空の一部の黒の後（photos/registered/20261009_step2-3_after.jpg）"
+proposal_caption = "工程4の地図（output/steps_blue/step4_blue.png）"

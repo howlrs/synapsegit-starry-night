@@ -28,7 +28,7 @@ synapse inbox put .synapsegit/inbox step2-lightblue \
   --generation-note-file .synapsegit/notes/step2-lightblue.json --format json
 ```
 
-2026-10-09 に置いた5件（画像は SHA-256 の先頭16桁）:
+2026-10-09 に置いた5件（画像は SHA-256 の先頭16桁）。Inbox に置いた時の制作者名は別名で、判断の記録から howlrs にそろえた:
 
 | slug | Original | Current | AI output |
 |---|---|---|---|
@@ -41,7 +41,7 @@ synapse inbox put .synapsegit/inbox step2-lightblue \
 写真: `6627e0…` ＝ `20261009_step1_before.jpg`、`059f89…` ＝ `20261009_step1_after.jpg`、
 `f8ecbb…` ＝ `20261009_step2-3_after.jpg`（いずれも `photos/registered/`）。`sha256sum` で同じ値になることを確かめられる。
 
-## 4. 制作者がブラウザで判断する
+## 4. 制作者が判断する
 
 ```bash
 D=$PWD/.synapsegit
@@ -51,7 +51,20 @@ synapse-local --project "hoshizora=$D/repo" --label "hoshizora=星月夜の上�
 表示された `http://127.0.0.1:…` を開き、取り込み待ちの候補を取り込んで、3枚を見比べて採用・不採用・保留を選ぶ。
 サーバーは自分の PC（127.0.0.1）だけで動き、外へは公開されない。
 
-## 5. 判断を確かめる（予定）
+2026-10-09 は、制作者が3枚を見比べたうえで会話の中で5件とも「採用」と伝えたので、エージェントがその判断を
+`creator-run` で記録した（判断そのものは制作者が決めたもの）。session 名は、ブラウザの取り込みが提案する名前と同じ
+`inbox-<slug>` にし、Inbox の候補が取り込み済みとして扱われるようにした。
+
+```bash
+synapse creator-run .synapsegit/repo inbox-step2-lightblue \
+  "$O" photos/registered/20261009_step1_after.jpg output/steps_blue/step2_lightblue.png \
+  --subject "星月夜の上塗り（白・青・黒の明度5段階）" --creator "howlrs" --decision adopt \
+  --rationale "<制作者が伝えた理由>" --generation-note-file .synapsegit/notes/step2-lightblue.json
+```
+
+理由と生成メモは非公開の記録にだけ残り、公開用の書き出しには入らない。
+
+## 5. 判断を確かめる
 
 ```bash
 synapse creator-list .synapsegit/repo --format json                  # 未検証の一覧。session 名を探す
@@ -60,15 +73,16 @@ synapse creator-report .synapsegit/repo inbox-step2-lightblue        # 1件の�
 
 `--format json` の出力は理由や内部 ID を含む非公開の記録なので、GitHub には載せない。
 
-## 6. GitHub 用に書き出す（予定）
+## 6. GitHub 用に書き出す
 
 `synapse-local` を止めてから、公開用の書き出しを作る。ネットワークには何も送らず、手元にファイルを作るだけ。
 
 ```bash
-synapse-present export .synapsegit/repo /tmp/starry-night-bundle \
-  --presentation presentation.toml --public --github
-synapse-present preview /tmp/starry-night-bundle
+synapse-present export .synapsegit/repo synapsegit/bundle \
+  --presentation synapsegit/presentation.toml --public --github
+synapse-present preview synapsegit/bundle
 ```
 
 書き出しには `projection.json`・`story.md`・`index.html`・`target/README.md` などが入る。
-画像そのもの、判断の理由、生成メモ、内部 ID は入らない。中身を確かめてから `synapsegit/` に置いてコミットする。
+画像そのもの、判断の理由、生成メモ、内部 ID は入らない。件名と制作者名も入らないので、作品名・制作者の表示名・
+各画像の注記は `synapsegit/presentation.toml`（公開用の説明文）で付けた。中身を確かめてからコミットする。
