@@ -1,0 +1,4 @@
+# 受け取ったままの写真は位置情報（EXIF の GPS）を含むので載せない。
+# 載せるのは向きを直して EXIF を除いた photos/registered/ と docs/images/ だけ。
+photos/*.jpg
+__pycache__/
