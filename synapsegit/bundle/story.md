@@ -32,7 +32,9 @@ Session: `inbox-plan-blue-5values`
 - Selected role: **AI\-attributed proposal**
 - Proposal retained in history even when unselected: `true`
 
-No public decision note was supplied. The source rationale remains redacted because its stored visibility is private and its training-use policy is prohibited.
+Public decision note (author supplied):
+
+> この見本を計画として採用し、白から順に塗り始めた。
 
 ### Evidence
 
@@ -67,7 +69,9 @@ Session: `inbox-step1-white`
 - Selected role: **AI\-attributed proposal**
 - Proposal retained in history even when unselected: `true`
 
-No public decision note was supplied. The source rationale remains redacted because its stored visibility is private and its training-use policy is prohibited.
+Public decision note (author supplied):
+
+> 地図を採用。月の光の輪、星、右の明るい帯に加え、渦の明るい筋なども白で塗った。
 
 ### Evidence
 
@@ -102,7 +106,9 @@ Session: `inbox-step2-lightblue`
 - Selected role: **AI\-attributed proposal**
 - Proposal retained in history even when unselected: `true`
 
-No public decision note was supplied. The source rationale remains redacted because its stored visibility is private and its training-use policy is prohibited.
+Public decision note (author supplied):
+
+> 地図を採用。白に青を少し混ぜた色で、空の広い範囲を塗った。
 
 ### Evidence
 
@@ -137,7 +143,9 @@ Session: `inbox-step3-midblue`
 - Selected role: **AI\-attributed proposal**
 - Proposal retained in history even when unselected: `true`
 
-No public decision note was supplied. The source rationale remains redacted because its stored visibility is private and its training-use policy is prohibited.
+Public decision note (author supplied):
+
+> 地図を採用。白青を濃いめにして塗ったが、見本の「3 中間の青」より明るめになった。
 
 ### Evidence
 
@@ -172,7 +180,9 @@ Session: `inbox-step4-blue`
 - Selected role: **AI\-attributed proposal**
 - Proposal retained in history even when unselected: `true`
 
-No public decision note was supplied. The source rationale remains redacted because its stored visibility is private and its training-use policy is prohibited.
+Public decision note (author supplied):
+
+> この地図で工程4を塗ることにした（塗る前の判断）。
 
 ### Evidence
 

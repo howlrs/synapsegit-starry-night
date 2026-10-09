@@ -10,27 +10,32 @@ title = "計画: 明度5段階の完成見本"
 original_caption = "塗る前のレプリカ（photos/registered/20261009_step1_before.jpg）"
 current_caption = "塗る前のレプリカ（Original と同じ写真）"
 proposal_caption = "明度5段階の見本（output/03_value5_blue.png）"
+public_decision_note = "この見本を計画として採用し、白から順に塗り始めた。"
 
 [sessions.inbox-step1-white]
 title = "工程1: 白"
 original_caption = "塗る前のレプリカ（photos/registered/20261009_step1_before.jpg）"
 current_caption = "工程1の前（塗る前と同じ写真）"
 proposal_caption = "工程1の地図（output/steps_blue/step1_white.png）。赤い輪郭が白で塗る場所"
+public_decision_note = "地図を採用。月の光の輪、星、右の明るい帯に加え、渦の明るい筋なども白で塗った。"
 
 [sessions.inbox-step2-lightblue]
 title = "工程2: 明るい青"
 original_caption = "塗る前のレプリカ（photos/registered/20261009_step1_before.jpg）"
 current_caption = "工程1（白）の後（photos/registered/20261009_step1_after.jpg）"
 proposal_caption = "工程2の地図（output/steps_blue/step2_lightblue.png）"
+public_decision_note = "地図を採用。白に青を少し混ぜた色で、空の広い範囲を塗った。"
 
 [sessions.inbox-step3-midblue]
 title = "工程3: 中間の青"
 original_caption = "塗る前のレプリカ（photos/registered/20261009_step1_before.jpg）"
 current_caption = "工程1の後の写真で代用（工程2と3を続けて塗り、その間の写真がないため）"
 proposal_caption = "工程3の地図（output/steps_blue/step3_midblue.png）"
+public_decision_note = "地図を採用。白青を濃いめにして塗ったが、見本の「3 中間の青」より明るめになった。"
 
 [sessions.inbox-step4-blue]
 title = "工程4: 青"
 original_caption = "塗る前のレプリカ（photos/registered/20261009_step1_before.jpg）"
 current_caption = "工程2・3と空の一部の黒の後（photos/registered/20261009_step2-3_after.jpg）"
 proposal_caption = "工程4の地図（output/steps_blue/step4_blue.png）"
+public_decision_note = "この地図で工程4を塗ることにした（塗る前の判断）。"

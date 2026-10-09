@@ -88,7 +88,7 @@
 
 判断は 2026-10-09、制作者が会話で伝えたものを `creator-run` で記録した（session 名 `inbox-<slug>`）。
 理由は計画〜工程3に制作者の言葉をそのまま入れた。工程4は理由なしで記録し、SynapseGit が既定の英文を入れた。
-公開用の書き出しは `synapsegit/bundle/`、説明文は `synapsegit/presentation.toml`（公開用の判断メモは制作者の確認待ちで未掲載）。
+公開用の書き出しは `synapsegit/bundle/`、説明文は `synapsegit/presentation.toml`（公開用の判断メモは制作者の確認を経て掲載）。
 
 ※ 工程2と3は続けて塗り、その間の写真がない。工程3の Current は工程2の開始前と同じ写真で、
 生成メモにもそう書いた。空の一部の黒（工程5の一部）は工程4より先に塗った。
