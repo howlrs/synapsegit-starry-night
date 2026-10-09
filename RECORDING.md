@@ -16,7 +16,7 @@
 | 登録用のコピー（向きを直し、位置情報入りの EXIF を除いたもの） | `photos/registered/` |
 | 生成メモ（登録1件ごと） | `.synapsegit/notes/<slug>.json` |
 | 進捗と添削 | `progress.md`、比較画像は `review/` |
-| GitHub（private の事例リポジトリ。載せる分だけ） | https://github.com/howlrs/synapsegit-starry-night |
+| GitHub（public の事例リポジトリ。載せる分だけ） | https://github.com/howlrs/synapsegit-starry-night |
 | SynapseGit の repository | `.synapsegit/repo` |
 | SynapseGit の Inbox（取り込み待ちの候補） | `.synapsegit/inbox` |
 
