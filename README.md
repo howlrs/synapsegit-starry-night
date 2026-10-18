@@ -5,11 +5,16 @@ IKEA で買ったゴッホ「星月夜」のレプリカに、アクリルの**�
 
 AI（Claude Code）が明度の見本と工程ごとの地図を**提案**し、制作者（howlrs）がそれを見て塗り、
 提案を**採用・不採用・保留**で判断します。どこまでが AI の提案で、どこからが人の判断なのかを、
-[SynapseGit](https://github.com/howlrs/synapsegit) v1.0.0 で工程ごとに記録しています。
+[SynapseGit](https://github.com/howlrs/synapsegit) で工程ごとに記録しています（初回はv1.0.0、今回の候補追加はv1.2.0）。
 
-| 塗る前 | 工程1 白の後 | 最新（工程2・3と空の一部に黒） |
+| 塗る前 | 青・黒を追加した後（6.jpg） | 最新：白で境界と色を調整した後（7.jpg） |
 |---|---|---|
-| <img src="docs/images/20261009_step1_before.jpg" width="260"> | <img src="docs/images/20261009_step1_after.jpg" width="260"> | <img src="docs/images/20261009_step2-3_after.jpg" width="260"> |
+| <img src="docs/images/20261009_step1_before.jpg" width="260"> | <img src="docs/images/20261018_blue-black_after.jpg" width="260"> | <img src="docs/images/20261018_white-adjustment_after.jpg" width="260"> |
+
+2026-10-18に青と黒を追加し、その後、黒の境界に白を置き、白で各色を和らげました。
+進捗と添削は [`progress.md`](progress.md)、途中写真の一覧は [`RECORDING.md`](RECORDING.md) にあります。
+2026-10-19には、6・7それぞれの制作状態と既存の完成見本を照合する候補をSynapseGitのInboxに追加しました。
+採用済みの判断は2026-10-09時点の記録です。
 
 ## SynapseGit で何を記録しているか
 
@@ -37,6 +42,16 @@ SynapseGit が確かめられるのは「記録した画像のバイトが同じ
 | 工程5 黒 `step5-black` | 工程4の後に登録 | <img src="output/steps_blue/step5_black.png" width="200"> | — |
 
 ※ 工程2と3は続けて塗り、その間の写真がありません。工程3の Current は工程2の開始前と同じ写真で、記録のメモにもそう書いています。
+
+制作状態の照合候補（2026-10-19追加）:
+
+| 候補 | Current | AIの見本 | 状態 |
+|---|---|---|---|
+| `review6-blue-black-20261018` | 6.jpg（青・黒の追加後） | 既存の完成見本 | Inboxに追加、判断の記録なし |
+| `review7-moonlight-white-20261018` | 7.jpg（白による調整後） | 既存の完成見本 | Inboxに追加、判断の記録なし |
+
+糸杉には「比較的静かな空に対して躍動する黒」を意図し、右からの月光を受けて盛り上がる面に白を差しています。
+この制作意図を添削メモに記録しました。上の候補は、採用済みの工程や完成の判断を示すものではありません。
 
 判断は 2026-10-09 に制作者が記録しました。SynapseGit の公開用の書き出し（`synapse-present export --public --github`）は
 [`synapsegit/bundle/target/README.md`](synapsegit/bundle/target/README.md) にあります。画像は含まれず、判断と画像の SHA-256 を照合できる形です。

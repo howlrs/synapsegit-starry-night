@@ -46,6 +46,8 @@
 ## 記録の粒度
 
 - **SynapseGit への登録は工程ごとに1件**（上の表の8件）。AIの提案（地図）と人の判断が対応する単位だから。
+- 作業後の状態と既存見本を照合する場合は、工程の記録と区別した `review...` の候補を追加する。
+  完了した工程や採用済みの判断とは扱わない。
 - **写真は作業の区切りごと**に撮り、`photos/` に残す（その日の作業終わり、工程の終わり）。
   登録に使うのは各工程の開始前の写真で、それ以外の途中写真は `photos/` に残すだけ。
 - 一定時間ごとの撮影はしない。提案のない記録が増え、乾く前の手を止めることにもなるため。
@@ -74,6 +76,12 @@
 | `20261009_prep_b.jpg` | 1.jpg | 17:23 | 塗る前。パレットと絵の具を並べた準備 |
 | `20261009_step1_after.jpg` | 4.jpg | 17:41 | 工程1（白）の後 ＝ 工程2の開始前 |
 | `20261009_step2-3_after.jpg` | 5.jpg | 18:46 | 工程2・3と空の一部の黒の後 ＝ 工程4の開始前 |
+| `20261018_blue-black_after.jpg` | 6.jpg | 2026-10-18 18:35 | 青と黒を追加した後（工程4・5に相当する作業を併せて実施） |
+| `20261018_white-adjustment_after.jpg` | 7.jpg | 2026-10-18 23:52 | 黒の境界に白を置き、白で各色を和らげた後（最新） |
+
+6・7の元ファイルはJPEG。
+撮影時刻は EXIF の撮影日時を参照した。受領したままのコピーを `photos/`、
+向きを確認して EXIF 等のメタデータを除いたコピーを `photos/registered/` と `docs/images/` に保存した。
 
 ## 記録の履歴
 
@@ -93,7 +101,30 @@
 ※ 工程2と3は続けて塗り、その間の写真がない。工程3の Current は工程2の開始前と同じ写真で、
 生成メモにもそう書いた。空の一部の黒（工程5の一部）は工程4より先に塗った。
 
-次にやること（2026-10-10、絵の具が乾いてから再開）: `progress.md` の直したい点を反映して工程4を塗る → 写真を共有 → `step5-black` を登録（Current＝工程4の後の写真）。
+当時の次回予定（2026-10-10）: `progress.md` の直したい点を反映して工程4を塗る → 写真を共有 → `step5-black` を登録（Current＝工程4の後の写真）。
+
+2026-10-18: 6.jpg（青・黒の後）と7.jpg（白による調整の後）を受領し、写真の保存と `progress.md` の追記を行った。
+6は青と黒を併せて進めた後の写真なので、「工程4だけの後＝黒を塗る前」の写真としては扱わない。
+写真を受領した時点ではSynapseGitを変更せず、以下の候補追加を2026-10-19に行った。
+上の採用済みの登録履歴は2026-10-09時点のまま。
+
+### 2026-10-19: 制作状態と完成見本の照合候補を追加
+
+| slug | Current（実物の制作状態） | AI output | 状態 |
+|---|---|---|---|
+| `review6-blue-black-20261018` | `photos/registered/20261018_blue-black_after.jpg`（6.jpg） | `output/03_value5_blue.png`（既存見本） | Inboxに追加。判断の記録なし |
+| `review7-moonlight-white-20261018` | `photos/registered/20261018_white-adjustment_after.jpg`（7.jpg） | `output/03_value5_blue.png`（既存見本） | Inboxに追加。判断の記録なし |
+
+Originalは2件とも `photos/registered/20261009_step1_before.jpg`、制作者名は `howlrs`。
+現在の状態から次の調整を考える記録として、実物写真をCurrent、既存のAIの完成見本をAI outputに置いた。
+今回、新しい見本画像の生成は行っていない。
+
+生成メモと実行結果は `.synapsegit/notes/<slug>.json`、`<slug>.receipt.json`。
+制作意図と添削の詳細は `.synapsegit/notes/review-20261019.md` と `progress.md` に記録した。
+両件の `decision_recorded=false` と、保存された3画像のSHA-256の一致を確認済み。
+採用・不採用・保留の指定は受けていないため、新しいHuman Decisionは記録していない。
+既存の5件の判断と公開用の書き出しは維持した。
+
 GitHub への反映: 工程ごとに写真（`photos/registered/`・`docs/images/`）、`progress.md`、README の表を更新してコミットする。
 判断が済んだら `synapse-local` を止め、`creator-report` で確かめてから `synapse-present export --public --github` で書き出し、
 中身を確かめて `synapsegit/` に置く。`.synapsegit/` は `.git/info/exclude`、元写真は `.gitignore` で除外している。

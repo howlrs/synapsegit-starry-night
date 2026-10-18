@@ -1,7 +1,9 @@
 # SynapseGit の使い方（この事例で実際に使った手順）
 
-SynapseGit v1.0.0（Linux x86_64 リリース版、SHA-256 と GitHub のビルド証明を確認して導入）。
-AI エージェント（Claude Code）が候補を置き、判断は制作者がブラウザで行う。エージェントは判断を代わりに選ばない。
+初回（2026-10-09）はSynapseGit v1.0.0、2026-10-19の候補追加は導入済みのv1.2.0を使用。
+以下の1〜6は初回に使った手順で、今回の実行内容は7に追記した。
+AIエージェント（初回はClaude Code、今回の候補追加はCodex）が候補を置き、判断は制作者がブラウザや会話で伝える。
+エージェントは判断を代わりに選ばない。
 
 ## 1. 置き場所を用意する（最初の1回）
 
@@ -86,3 +88,31 @@ synapse-present preview synapsegit/bundle
 書き出しには `projection.json`・`story.md`・`index.html`・`target/README.md` などが入る。
 画像そのもの、判断の理由、生成メモ、内部 ID は入らない。件名と制作者名も入らないので、作品名・制作者の表示名・
 各画像の注記は `synapsegit/presentation.toml`（公開用の説明文）で付けた。中身を確かめてからコミットする。
+
+## 7. 制作写真6・7と既存見本の照合を追加（2026-10-19）
+
+制作写真をCurrent、既存の完成見本をAI outputとして、工程とは別の照合候補を2件追加した。
+Originalは塗る前のレプリカ、制作者名は `howlrs`。画像の再生成は行っていない。
+
+```bash
+synapse inbox put .synapsegit/inbox review6-blue-black-20261018 \
+  photos/registered/20261009_step1_before.jpg \
+  photos/registered/20261018_blue-black_after.jpg output/03_value5_blue.png \
+  --subject "星月夜の上塗り: 青・黒の追加後（6.jpg）と完成見本の照合" --creator "howlrs" \
+  --generation-note-file .synapsegit/notes/review6-blue-black-20261018.json --format json
+
+synapse inbox put .synapsegit/inbox review7-moonlight-white-20261018 \
+  photos/registered/20261009_step1_before.jpg \
+  photos/registered/20261018_white-adjustment_after.jpg output/03_value5_blue.png \
+  --subject "星月夜の上塗り: 月光の白と躍動する糸杉（7.jpg）の照合" --creator "howlrs" \
+  --generation-note-file .synapsegit/notes/review7-moonlight-white-20261018.json --format json
+```
+
+| slug | Original SHA-256（先頭16桁） | Current SHA-256（先頭16桁） | AI output SHA-256（先頭16桁） |
+|---|---|---|---|
+| `review6-blue-black-20261018` | `6627e06e4b9a57ac` | `84d15d402512dc3f` | `89ed5f818d7156f9` |
+| `review7-moonlight-white-20261018` | `6627e06e4b9a57ac` | `58d9c0947acd1d62` | `89ed5f818d7156f9` |
+
+両件の実行結果で `decision_recorded=false` を確認し、Inboxが保持した画像のサイズとSHA-256を元の登録用画像と照合した。
+実行結果は `.synapsegit/notes/<slug>.receipt.json`、制作意図と添削は `.synapsegit/notes/review-20261019.md` に保存。
+採用・不採用・保留は新たに記録せず、既存の判断と公開用bundleはそのまま残した。
